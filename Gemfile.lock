@@ -57,6 +57,7 @@ GEM
     minitest (5.8.3)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
+    pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -124,6 +125,7 @@ PLATFORMS
 
 DEPENDENCIES
   bullet (= 4.14.10)
+  pg (= 0.18.4)
   rails (= 4.2.3)
   rspec-rails (= 3.4)
   simplecov (= 0.11.0)
