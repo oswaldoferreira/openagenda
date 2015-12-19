@@ -45,6 +45,7 @@ GEM
     bullet (4.14.10)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.9.0)
+    database_cleaner (1.5.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
@@ -139,6 +140,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (= 0.10.0.rc3)
   bullet (= 4.14.10)
+  database_cleaner (= 1.5.0)
   factory_girl_rails (= 4.5.0)
   faker (= 1.6.1)
   pg (= 0.18.4)

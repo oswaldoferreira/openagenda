@@ -8,6 +8,8 @@ group :test do
   gem 'simplecov',   '0.11.0'
   gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'faker',                '1.6.1'
+  gem 'database_cleaner',     '1.5.0'
+
 end
 
 group :development, :test do
