@@ -1,4 +1,8 @@
 class API::V1::EventsController < ApplicationController
+  def index
+    render json: Event.all
+  end
+
   def create
     event = Event.new(allowed_params)
 

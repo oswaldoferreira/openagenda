@@ -1,6 +1,38 @@
 require 'rails_helper'
 
 RSpec.describe 'Events API', type: :request do
+  describe 'GET api/v1/events' do
+    let!(:event_1) { create :event, start_at: DateTime.new(2015, 3, 14) }
+    let!(:event_2) { create :event, start_at: DateTime.new(2015, 3, 14) }
+
+    let(:perform_request) { get '/api/v1/events' }
+
+    it 'returns a list of events' do
+      perform_request
+
+      expect(JSON.parse(response.body)).to eq(
+        {
+          "events"=>[
+            {
+              "id"=>event_1.id,
+              "title"=>event_1.title,
+              "description"=>event_1.description,
+              "start_at"=>"2015-03-14T00:00:00.000Z",
+              "user_id"=>event_1.user_id
+            },
+            {
+              "id"=>event_2.id,
+              "title"=>event_2.title,
+              "description"=>event_2.description,
+              "start_at"=>"2015-03-14T00:00:00.000Z",
+              "user_id"=>event_2.user_id
+            }
+          ]
+        }
+      )
+    end
+  end
+
   describe 'POST api/v1/events' do
     context 'when valid attributes' do
       let(:attributes) {
